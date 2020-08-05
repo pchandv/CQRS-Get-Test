@@ -12,7 +12,7 @@
             var url=$text.val();
             $log.append("\n <br/> Connecting to "+$text.val());
             $.ajax
-                ({
+                ({ 
                     dataType: "json",
                     url: url,
                     success: function (data) {
