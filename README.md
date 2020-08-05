@@ -2,9 +2,9 @@
 
 Simple html web page to test CQRS - HTTPS --> HTTPGET
 
-#CQRS Example:
+# CQRS Example:
 Pass this url : https://jsonplaceholder.typicode.com/todos/1 and will recieve success as message
 
-#Note:
+# Note:
   HTTP url not supported 
 
