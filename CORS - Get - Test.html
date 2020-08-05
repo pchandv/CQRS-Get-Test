@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Praveen-CORS-test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type='text/javascript'>
+        function TestMethod() {
+            var $log=$("#log");
+            var $text=$("#txurl");
+            var url=$text.val();
+            $log.append("\n <br/> Connecting to "+$text.val());
+            $.ajax
+                ({
+                    dataType: "json",
+                    url: url,
+                    success: function (data) {
+                        $log.append("\n <br /> Connection success ");
+
+                        console.log("log response on success ");
+                        console.log(data);
+                    },
+                    error:function(jqhr,status,err){
+                        $log.append("\n <br />  Connection failed status:"+status);
+                        $log.append("\n <br />  jqhr:"+jqhr.statusText);
+                        $log.append("\n <br /> err:"+err);
+                        console.log(jqhr);
+                    }
+                });
+        }
+
+        function clear(){
+            var $log=$("#log");
+            $log.clear();
+        }
+
+    </script>
+</head>
+
+<body>
+    <label>Enter URL</label>
+    <input type="text" id="txurl" style="width: 270px;" value="" />
+    <button id="btnTest" onclick="TestMethod()" >Test CQRS</button>
+    <button id="btnclear" onclick="clear()" >Clear logs</button>
+    <br/>
+    <!-- <textarea name="" id="log" cols="30" rows="10" style="height: 500px;width: 700px;"></textarea> -->
+    <label id="log"  style="height: 500px;width: 700px;"></label>
+
+
+</body>
+
+</html>
