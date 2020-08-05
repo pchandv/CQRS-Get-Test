@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Praveen-CORS-HTTPGET</title>
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <!-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type='text/javascript'>
         function TestMethod() {
@@ -31,9 +31,10 @@
                 });
         }
 
-        function clear(){
-            var $log=$("#log");
-            $log.text('');
+        function Reset(){ 
+            $("#log").html('');
+            console.clear();
+            console.log('log cleared');
         }
 
     </script>
@@ -43,10 +44,10 @@
     <label>Enter URL</label>
     <input type="text" id="txurl" style="width: 270px;" value="" />
     <button id="btnTest" onclick="TestMethod()" >Test CQRS</button>
-    <button id="btnclear" onclick="clear()" >Clear logs</button>
+    <button id="btnclear" onclick="Reset()" >Clear logs</button>
     <br/>
     <!-- <textarea name="" id="log" cols="30" rows="10" style="height: 500px;width: 700px;"></textarea> -->
-    <label id="log"  style="height: 500px;width: 700px;"></label>
+    <label id="log" name='log' style="height: 500px;width: 700px;"></label>
 
 
 </body>
